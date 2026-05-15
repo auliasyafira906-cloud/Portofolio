@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beauty Landing Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#fff;
+      color:#222;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* TOP BAR */
+    .top-bar{
+      background:#f6dede;
+      padding:10px 0;
+      font-size:13px;
+      color:#666;
+    }
+
+    .top-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    /* NAVBAR */
+    nav{
+      background:#fff;
+      padding:20px 0;
+      border-bottom:1px solid #eee;
+    }
+
+    .nav-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:38px;
+      font-weight:700;
+      letter-spacing:2px;
+    }
+
+    .menu{
+      display:flex;
+      gap:40px;
+      align-items:center;
+    }
+
+    .menu a{
+      font-size:15px;
+      font-weight:500;
+      transition:.3s;
+    }
+
+    .menu a:hover{
+      color:#e6a8b1;
+    }
+
+    .nav-btn{
+      background:#e8b3b8;
+      color:white;
+      padding:12px 26px;
+      border-radius:30px;
+      border:none;
+      font-size:14px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      background:#f6e3e3;
+      padding:70px 0;
+    }
+
+    .hero-content{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:50px;
+    }
+
+    .hero-left{
+      flex:1;
+    }
+
+    .hero-left small{
+      color:#999;
+      letter-spacing:2px;
+    }
+
+    .hero-left h1{
+      font-size:62px;
+      line-height:1.1;
+      margin:20px 0;
+    }
+
+    .hero-left button{
+      background:#e8b3b8;
+      border:none;
+      padding:14px 35px;
+      border-radius:30px;
+      color:white;
+      font-size:15px;
+      cursor:pointer;
+    }
+
+    .hero-right{
+      flex:1;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .product-box{
+      background:#fff;
+      border-radius:20px;
+      padding:20px;
+      text-align:center;
+      box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .product-box img{
+      height:220px;
+      object-fit:contain;
+    }
+
+    /* FEATURED */
+    .featured{
+      padding:80px 0;
+      text-align:center;
+    }
+
+    .title{
+      font-size:38px;
+      margin-bottom:50px;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid #eee;
+      padding:20px;
+      border-radius:18px;
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .card img{
+      height:220px;
+      object-fit:cover;
+      border-radius:15px;
+    }
+
+    .card h3{
+      margin-top:15px;
+      font-size:18px;
+    }
+
+    .price{
+      color:#e39ca6;
+      margin:10px 0;
+      font-weight:600;
+    }
+
+    .card button{
+      border:none;
+      background:#f4c3c9;
+      padding:10px 20px;
+      border-radius:25px;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    /* SALE */
+    .sale{
+      background:#f7e1e1;
+      padding:80px 0;
+      margin-top:40px;
+    }
+
+    .sale-content{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:50px;
+    }
+
+    .sale-text{
+      flex:1;
+    }
+
+    .sale-text h2{
+      font-size:50px;
+      line-height:1.2;
+    }
+
+    .sale-text p{
+      margin:20px 0;
+      color:#666;
+    }
+
+    .sale-text button{
+      background:#e8b3b8;
+      color:#fff;
+      border:none;
+      padding:14px 30px;
+      border-radius:30px;
+      cursor:pointer;
+    }
+
+    .sale-img{
+      flex:1;
+      display:flex;
+      gap:20px;
+    }
+
+    .sale-img img{
+      border-radius:20px;
+      object-fit:cover;
+      height:350px;
+    }
+
+    /* BLOG */
+    .blog{
+      padding:80px 0;
+    }
+
+    .blog-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .blog-card{
+      border:1px solid #eee;
+      border-radius:20px;
+      overflow:hidden;
+      background:#fff;
+    }
+
+    .blog-card img{
+      height:240px;
+      object-fit:cover;
+    }
+
+    .blog-card-content{
+      padding:20px;
+    }
+
+    .blog-card h3{
+      margin-bottom:10px;
+    }
+
+    .blog-card p{
+      color:#666;
+      font-size:14px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#f6dede;
+      padding:35px 0;
+      margin-top:40px;
+    }
+
+    .footer-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .socials{
+      display:flex;
+      gap:15px;
+    }
+
+    .socials div{
+      width:40px;
+      height:40px;
+      background:#000;
+      color:#fff;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+
+    @media(max-width:900px){
+
+      .hero-content,
+      .sale-content{
+        flex-direction:column;
+      }
+
+      .hero-left h1{
+        font-size:45px;
+      }
+
+      .sale-text h2{
+        font-size:38px;
+      }
+
+      .menu{
+        display:none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-content">
+      <p>FREE DELIVERY EVERY FRIDAY</p>
+      <p>BEAUTY PRODUCTS</p>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">BEAUTY.</div>
+
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">New Beauty</a>
+        <a href="#">Skincare</a>
+        <a href="#">Makeup</a>
+      </div>
+
+      <button class="nav-btn">SHOP NOW</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="hero-left">
+        <small>NEW ARRIVAL</small>
+        <h1>Glow like <br> never before!</h1>
+        <button>SHOP NOW</button>
+      </div>
+
+      <div class="hero-right">
+
+        <div class="product-box">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="product-box">
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=800&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="product-box">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop" alt="">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="featured">
+    <div class="container">
+
+      <h2 class="title">Featured Product</h2>
+
+      <div class="product-grid">
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1583241800698-9c1b84d73d2f?q=80&w=800&auto=format&fit=crop">
+          <h3>LIPSTICK</h3>
+          <div class="price">$29</div>
+          <button>Shop Now</button>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?q=80&w=800&auto=format&fit=crop">
+          <h3>FOUNDATION</h3>
+          <div class="price">$35</div>
+          <button>Shop Now</button>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1631730486572-226d1f595b68?q=80&w=800&auto=format&fit=crop">
+          <h3>SKINCARE</h3>
+          <div class="price">$42</div>
+          <button>Shop Now</button>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=800&auto=format&fit=crop">
+          <h3>POWDER</h3>
+          <div class="price">$22</div>
+          <button>Shop Now</button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SALE -->
+  <section class="sale">
+    <div class="container sale-content">
+
+      <div class="sale-text">
+        <h2>Spring Beauty Sale <br> Up to 40% Off</h2>
+
+        <p>
+          Discover premium skincare and beauty products with elegant designs and luxurious quality.
+        </p>
+
+        <button>SHOP NOW</button>
+      </div>
+
+      <div class="sale-img">
+        <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=800&auto=format&fit=crop">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="blog">
+    <div class="container">
+
+      <div class="blog-grid">
+
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop">
+          <div class="blog-card-content">
+            <h3>MAKEUP ROUTINE</h3>
+            <p>Discover the perfect makeup look for every occasion.</p>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop">
+          <div class="blog-card-content">
+            <h3>SKINCARE TIPS</h3>
+            <p>Healthy glowing skin starts with proper skincare.</p>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800&auto=format&fit=crop">
+          <div class="blog-card-content">
+            <h3>BEAUTY SECRETS</h3>
+            <p>Professional beauty secrets for your daily routine.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+
+      <div>
+        <h3>BEAUTY.</h3>
+        <p>Modern Beauty Skincare</p>
+      </div>
+
+      <div class="socials">
+        <div>F</div>
+        <div>I</div>
+        <div>T</div>
+        <div>Y</div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
